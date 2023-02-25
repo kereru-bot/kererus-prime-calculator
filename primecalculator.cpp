@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <ctime>
 
 //Prime number calculator
 
@@ -15,7 +16,7 @@ bool isSqrtWhole(float squareRoot) {
 }
 
 int main() {
-
+    
     int primeAmount;
 
     //Check if the number is a number above 0
@@ -28,8 +29,11 @@ int main() {
     std::cout << "Please enter a natural number above 0 \n";
     }
     
+    clock_t timer;
+
     int counter = 0;
     
+    timer = clock();
     //For each number from 1 to the primeAmount
     for(int i = 1; i <= primeAmount; i++) {
         bool isPrime = true;
@@ -55,6 +59,9 @@ int main() {
         }
     }
 
+    //Calculate time taken
+    timer = clock() - timer;
+
     std::cout << '\n';
 
     if(counter == 1) {
@@ -63,6 +70,8 @@ int main() {
     else {
         std::cout << counter << " prime numbers\n\n";
     }
+
+    std::cout << "Total time taken: " << (float(timer) / CLOCKS_PER_SEC) << " seconds\n";
 
     std::cout << "Press Enter to Exit";
     while(true) {
