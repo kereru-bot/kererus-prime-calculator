@@ -1,8 +1,6 @@
 #include <iostream>
 #include <cmath>
 
-using namespace std;
-
 //Prime number calculator
 
 /// @brief "Checks the given square root to see if it is a whole number"
@@ -22,12 +20,12 @@ int main() {
 
     //Check if the number is a number above 0
     while(true) {
-    cout << "Up to which number would you like to calculate the prime numbers for?" << "\n";
-    cin >> primeAmount;
+    std::cout << "Up to which number would you like to calculate the prime numbers for?" << "\n";
+    std::cin >> primeAmount;
     if(!(primeAmount <= 0)) {
         break;
     }
-    cout << "Please enter a natural number above 0 \n";
+    std::cout << "Please enter a natural number above 0 \n";
     }
     
     int counter = 0;
@@ -51,25 +49,25 @@ int main() {
                 }
             }
             if(isPrime) {
-                cout << i << " is prime" << "\n";
+                std::cout << i << " is prime" << "\n";
                 counter++;
             }
         }
     }
 
-    cout << '\n';
+    std::cout << '\n';
 
     if(counter == 1) {
-        cout << counter << " prime number, why...\n\n";
+        std::cout << counter << " prime number, why...\n\n";
     }
     else {
-        cout << counter << " prime numbers\n\n";
+        std::cout << counter << " prime numbers\n\n";
     }
 
-    cout << "Press Enter to Exit";
+    std::cout << "Press Enter to Exit";
     while(true) {
-        cin.ignore();
-        if(cin.get() == '\n') {
+        std::cin.ignore();
+        if(std::cin.get() == '\n') {
             break;
         }
     }
